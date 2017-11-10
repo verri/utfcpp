@@ -28,7 +28,7 @@ DEALINGS IN THE SOFTWARE.
 #ifndef UTF8_FOR_CPP_CHECKED_H_2675DCD0_9480_4c0c_B92A_CC14C027B731
 #define UTF8_FOR_CPP_CHECKED_H_2675DCD0_9480_4c0c_B92A_CC14C027B731
 
-#include "core.h"
+#include <utf8/core.h>
 #include <stdexcept>
 
 namespace utf8
@@ -176,7 +176,7 @@ namespace utf8
 
     /// Deprecated in versions that include "prior"
     template <typename octet_iterator>
-    uint32_t previous(octet_iterator& it, octet_iterator pass_start)
+    [[deprecated("prior should be used instead")]] uint32_t previous(octet_iterator& it, octet_iterator pass_start)
     {
         octet_iterator end = it;
         while (utf8::internal::is_trail(*(--it)))
@@ -323,5 +323,3 @@ namespace utf8
 } // namespace utf8
 
 #endif //header guard
-
-
