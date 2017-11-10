@@ -230,7 +230,7 @@ namespace internal
 
         uint32_t cp = 0;
         // Determine the sequence length based on the lead octet
-        typedef typename std::iterator_traits<octet_iterator>::difference_type octet_difference_type;
+        using octet_difference_type = typename std::iterator_traits<octet_iterator>::difference_type;
         const octet_difference_type length = utf8::internal::sequence_length(it);
 
         // Get trail octets and calculate the code point
